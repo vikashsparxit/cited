@@ -1,0 +1,12 @@
+services:
+  cited:
+    build: .
+    image: docker.clientwork.xyz/spxtalent/cited:prod
+    ports:
+      - "9091:80"
+    networks:
+      - cited-network
+
+networks:
+  cited-network:
+    external: true
