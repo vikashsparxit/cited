@@ -6,376 +6,978 @@
   <title>Cited — Bot AEO Monthly | AI Citation Optimization Retainer</title>
   <meta name="description" content="Bot AEO Monthly — AI citation & answer-engine optimization retainer for B2B SaaS. Get found in Claude, Gemini, Grok & Google AI Overviews." />
   <meta name="robots" content="index,follow" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='%23f5f5f4'%3EC%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23181818'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='%23f8fafc'%3EC%3C/text%3E%3C/svg%3E" />
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; }
+    :root {
+      color-scheme: dark;
+      --bg-primary: #0f0f0f;
+      --bg-secondary: #181818;
+      --bg-tertiary: #212121;
+      --bg-card: #1a1a1a;
+      --border-primary: #2a2a2a;
+      --border-secondary: #383838;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --accent-primary: #6366f1;
+      --accent-secondary: #8b5cf6;
+      --accent-success: #10b981;
+      --accent-warning: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: #0a0a0a;
-      color: #f5f5f4;
+      font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
-      background-image:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 120, 255, 0.18), transparent),
-        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(56, 189, 248, 0.08), transparent);
+      font-weight: 400;
     }
-    
-    .container {
-      max-width: 48rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(15, 15, 15, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-primary);
+    }
+
+    .nav-container {
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
     }
-    
-    .section {
-      margin-bottom: 5rem;
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      text-decoration: none;
     }
-    
-    .hero {
-      text-align: center;
-      margin-bottom: 6rem;
-    }
-    
-    .mark {
-      display: inline-flex;
+
+    .nav-logo-icon {
+      width: 2rem;
+      height: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-primary);
+      border-radius: 0.5rem;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 0.85rem;
-      background: #18181b;
-      border: 1px solid #27272a;
+      color: var(--text-primary);
       font-weight: 700;
-      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      background: var(--accent-primary);
+      color: white;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #5048e5;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-sm {
+      padding: 3rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 6rem;
+      margin-top: 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 900;
       margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
-      font-weight: 650;
-      letter-spacing: -0.03em;
-      margin: 0 0 1rem;
-      line-height: 1.1;
-    }
-    
-    h2 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin: 0 0 1rem;
-      color: #f5f5f4;
-    }
-    
-    h3 {
+
+    .hero-tagline {
       font-size: 1.25rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem;
-      color: #f5f5f4;
-    }
-    
-    .tagline {
-      font-size: clamp(1rem, 3vw, 1.25rem);
-      color: #a1a1aa;
+      color: var(--text-secondary);
       margin-bottom: 2rem;
       font-weight: 500;
     }
-    
-    .subtitle {
+
+    .hero-description {
       font-size: 1.1rem;
-      color: #d4d4d8;
-      margin-bottom: 2rem;
-      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
     }
-    
-    p {
-      color: #a1a1aa;
-      margin: 0 0 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    
-    .content-section {
-      text-align: left;
-      max-width: 42rem;
-      margin: 0 auto;
-    }
-    
-    .content-section.center {
-      text-align: center;
-    }
-    
-    .deliverables {
-      display: grid;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .deliverable {
-      background: #111113;
-      border: 1px solid #27272a;
-      border-radius: 0.75rem;
+
+    /* AI Mock UI */
+    .ai-mock {
+      background: var(--bg-card);
+      border: 1px solid var(--border-primary);
+      border-radius: 1rem;
       padding: 1.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-    
-    .deliverable-number {
+
+    .ai-mock-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-primary);
+    }
+
+    .ai-mock-avatar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .ai-mock-info {
+      flex: 1;
+    }
+
+    .ai-mock-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+    }
+
+    .ai-mock-status {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .ai-mock-query {
+      background: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      border-left: 3px solid var(--accent-primary);
+    }
+
+    .ai-mock-response {
+      line-height: 1.6;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .ai-mock-citation {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-secondary);
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .citation-icon {
+      width: 1rem;
+      height: 1rem;
+      color: var(--accent-success);
+    }
+
+    .citation-text {
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+
+    /* Buttons */
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-      background: #27272a;
-      color: #f5f5f4;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-right: 0.75rem;
-    }
-    
-    .proof-box {
-      background: #111113;
-      border: 1px solid #27272a;
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-    
-    .proof-box p {
-      color: #d4d4d8;
-      font-style: italic;
-      margin: 0;
-    }
-    
-    .pricing {
-      display: grid;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .pricing-tier {
-      background: #111113;
-      border: 1px solid #27272a;
-      border-radius: 0.75rem;
-      padding: 2rem;
-      position: relative;
-    }
-    
-    .pricing-tier.featured {
-      border-color: #3b82f6;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.02));
-    }
-    
-    .pricing-tier.featured::before {
-      content: "Most Popular";
-      position: absolute;
-      top: -0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #3b82f6;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-    
-    .price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #f5f5f4;
-      margin: 0 0 0.5rem;
-    }
-    
-    .price-period {
-      color: #a1a1aa;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-    
-    .btn {
-      display: inline-block;
       padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
-      text-align: center;
-      transition: all 0.2s;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
       border: none;
       cursor: pointer;
-      margin-top: 1rem;
+      white-space: nowrap;
     }
-    
+
     .btn-primary {
-      background: #3b82f6;
+      background: var(--accent-primary);
       color: white;
     }
-    
+
     .btn-primary:hover {
-      background: #2563eb;
+      background: #5048e5;
+      transform: translateY(-1px);
     }
-    
+
     .btn-secondary {
-      background: #27272a;
-      color: #f5f5f4;
-      border: 1px solid #404040;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-secondary);
     }
-    
+
     .btn-secondary:hover {
-      background: #3f3f46;
+      background: var(--bg-tertiary);
+      border-color: var(--border-primary);
     }
-    
-    .btn-group {
+
+    /* Trust Strip */
+    .trust-strip {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border-primary);
+      border-bottom: 1px solid var(--border-primary);
+    }
+
+    .trust-content {
+      text-align: center;
+    }
+
+    .trust-label {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .trust-badges {
       display: flex;
-      gap: 1rem;
       justify-content: center;
-      margin-top: 1.5rem;
+      gap: 2rem;
       flex-wrap: wrap;
     }
-    
-    .footer {
+
+    .trust-badge {
+      background: var(--bg-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border: 1px solid var(--border-primary);
+    }
+
+    /* Problem Section */
+    .problem {
+      background: var(--bg-secondary);
+    }
+
+    .problem-content {
+      max-width: 48rem;
+      margin: 0 auto;
       text-align: center;
-      color: #71717a;
+    }
+
+    .problem h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .problem-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    .problem-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .problem-stat {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-primary);
+      border-radius: 0.75rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent-primary);
+      margin-bottom: 0.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
       font-size: 0.875rem;
-      border-top: 1px solid #27272a;
-      padding-top: 2rem;
-      margin-top: 4rem;
+      font-weight: 500;
     }
-    
-    .footer p {
-      color: #71717a;
-      font-size: 0.875rem;
+
+    /* How It Works */
+    .how-it-works h2 {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 3rem;
     }
-    
-    ul {
-      color: #a1a1aa;
-      margin: 1rem 0;
-      padding-left: 1.5rem;
+
+    .steps {
+      display: grid;
+      gap: 3rem;
+      margin-top: 2rem;
     }
-    
-    li {
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .step:nth-child(even) {
+      grid-template-columns: 1fr auto;
+      direction: rtl;
+    }
+
+    .step:nth-child(even) .step-content {
+      direction: ltr;
+      text-align: right;
+    }
+
+    .step-number {
+      width: 4rem;
+      height: 4rem;
+      background: var(--accent-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .step-content p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Deliverables */
+    .deliverables {
+      background: var(--bg-secondary);
+    }
+
+    .deliverables h2 {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 3rem;
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .deliverable-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-primary);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .deliverable-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-secondary);
+    }
+
+    .deliverable-icon {
+      width: 3rem;
+      height: 3rem;
+      background: var(--accent-primary);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    .deliverable-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .deliverable-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Pricing */
+    .pricing h2 {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 3rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-primary);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent-primary);
+      transform: scale(1.05);
+    }
+
+    .pricing-card:hover:not(.featured) {
+      transform: translateY(-2px);
+      border-color: var(--border-secondary);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-primary);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .pricing-name {
+      font-size: 1.5rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    
-    @media (max-width: 768px) {
-      .btn-group {
-        flex-direction: column;
+
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .pricing-period {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-description {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .pricing-cta {
+      width: 100%;
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--bg-secondary);
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 3rem;
+    }
+
+    .faq-list {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-primary);
+      padding: 1.5rem 0;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .faq-answer {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-primary);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    .footer p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .footer-copyright {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none;
       }
       
-      .pricing {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+      
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 6rem 0 4rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+        text-align: center;
         gap: 1rem;
       }
-      
-      .pricing-tier {
-        padding: 1.5rem;
+
+      .step:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .step:nth-child(even) .step-content {
+        direction: ltr;
+        text-align: center;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .trust-badges {
+        gap: 1rem;
+      }
+
+      .problem-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="mark" aria-hidden="true">C</div>
-      <h1>Bot AEO Monthly</h1>
-      <p class="tagline">AI citation & answer-engine optimization retainer</p>
-      <p class="subtitle">Get found when your customers ask Claude, Gemini, Grok, and Google AI Overviews about your product category.</p>
-      <div class="btn-group">
-        <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary" target="_blank">Start Focus — $1,500/mo</a>
-        <a href="#pricing" class="btn btn-secondary">View Pricing</a>
-      </div>
-    </section>
-
-    <!-- What It Is Section -->
-    <section class="section content-section">
-      <h2>What Bot AEO Monthly Is</h2>
-      <p>Bot AEO Monthly is a specialized retainer service that optimizes your product for AI answer engines. While everyone else focuses on traditional SEO, we make sure your business gets mentioned when AI assistants answer questions about your industry.</p>
-      <p>Each month, we audit how AI engines currently answer questions in your space, create content specifically shaped for AI citation, and track your visibility across the major AI platforms.</p>
-    </section>
-
-    <!-- Who It's For Section -->
-    <section class="section content-section">
-      <h2>Who This Is For</h2>
-      <p>Bot AEO Monthly works best for:</p>
-      <ul>
-        <li><strong>B2B SaaS founders</strong> who need to be found when prospects research solutions</li>
-        <li><strong>Heads of Growth</strong> at ATS/HR-tech companies competing for attention</li>
-        <li><strong>B2B commerce leaders</strong> whose customers increasingly ask AI for recommendations</li>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">C</div>
+        <span>Cited</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#deliverables">What you get</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#" class="nav-cta">Start Focus — $1,500/mo</a></li>
       </ul>
-      <p>You have a live product, paying customers, and want to capture demand when people ask AI assistants for recommendations in your category.</p>
-    </section>
+    </div>
+  </nav>
 
-    <!-- What's Included Section -->
-    <section class="section content-section">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Get Found When AI Recommends Your Category</h1>
+          <p class="hero-tagline">Bot AEO Monthly — AI Citation Optimization Retainer</p>
+          <p class="hero-description">
+            Stop losing prospects to AI recommendations. Bot AEO Monthly gets 
+            your B2B SaaS mentioned when Claude, Gemini, and Google AI answer 
+            questions about your industry.
+          </p>
+          <div class="hero-ctas">
+            <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary" target="_blank">
+              Start Focus — $1,500/mo
+            </a>
+            <a href="#pricing" class="btn btn-secondary">View All Plans</a>
+          </div>
+        </div>
+        <div class="ai-mock">
+          <div class="ai-mock-header">
+            <div class="ai-mock-avatar">C</div>
+            <div class="ai-mock-info">
+              <div class="ai-mock-name">Claude</div>
+              <div class="ai-mock-status">AI Assistant</div>
+            </div>
+          </div>
+          <div class="ai-mock-query">
+            "What's the best project management software for remote teams?"
+          </div>
+          <div class="ai-mock-response">
+            <p>For remote teams, I'd recommend looking at several strong options:</p>
+            <div class="ai-mock-citation">
+              <svg class="citation-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="citation-text">Your SaaS Company — Comprehensive team collaboration platform</span>
+            </div>
+            <p><strong>Your SaaS Company</strong> offers excellent remote team features with integrated video calls, async communication tools, and robust project tracking. Their approach to distributed team coordination has earned recognition from leading remote-first organizations.</p>
+            <p>Other solid options include Asana for task management and Notion for documentation-heavy workflows...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-content">
+        <p class="trust-label">Monitoring AI engines actively</p>
+        <div class="trust-badges">
+          <div class="trust-badge">Claude 3.5 Sonnet</div>
+          <div class="trust-badge">Gemini Pro</div>
+          <div class="trust-badge">GPT-4 & Grok</div>
+          <div class="trust-badge">Google AI Overviews</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem section">
+    <div class="container">
+      <div class="problem-content">
+        <h2>While competitors fight for traditional SEO rankings, smart companies are capturing demand where their prospects actually search</h2>
+        <p class="problem-description">
+          Your customers aren't just Googling anymore. They're asking Claude for software recommendations, 
+          getting Gemini to compare solutions, and trusting AI assistants to guide their buying decisions. 
+          If you're not optimized for AI citation, you're invisible where it matters most.
+        </p>
+        <div class="problem-stats">
+          <div class="problem-stat">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">AI engines actively monitored</div>
+          </div>
+          <div class="problem-stat">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">money queries audited monthly</div>
+          </div>
+          <div class="problem-stat">
+            <div class="stat-number">$1.5K</div>
+            <div class="stat-label">starting monthly investment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works section" id="how-it-works">
+    <div class="container">
+      <h2>How Bot AEO Monthly Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>AI Citation Audit</h3>
+            <p>We test how Claude, Gemini, Grok, and Google AI Overviews currently answer the exact questions your prospects ask when they're ready to buy. This reveals where you're missing and which competitors are getting cited.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Answer-Shaped Content</h3>
+            <p>We create content specifically designed for AI citation — not traditional SEO. These pages are structured to match how AI engines understand and reference solutions in your category.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Entity & Citation Plan</h3>
+            <p>Strategic roadmap for building the signals that AI engines use to understand and cite your product. This includes entity relationships, authority markers, and citation patterns that increase your visibility.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Track & Iterate</h3>
+            <p>Monthly scoreboard showing query × engine matrix where you're getting cited. We track improvements over time and adjust strategy based on how AI engines evolve their recommendation patterns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="deliverables section" id="deliverables">
+    <div class="container">
       <h2>What You Get Each Month</h2>
-      <div class="deliverables">
-        <div class="deliverable">
-          <h3><span class="deliverable-number">1</span>10 Money-Query AI Citation Audit</h3>
-          <p>We test how Claude, Gemini, Grok, and Google AI Overviews currently answer the exact questions your prospects ask when they're ready to buy.</p>
+      <div class="deliverables-grid">
+        <div class="deliverable-card">
+          <div class="deliverable-icon">📊</div>
+          <h3>10 Money-Query AI Citation Audit</h3>
+          <p>Comprehensive testing of how AI engines answer your prospects' buying questions. Delivered as detailed report with competitor analysis and opportunity gaps.</p>
         </div>
-        <div class="deliverable">
-          <h3><span class="deliverable-number">2</span>Up to 4 Answer-Shaped Pages</h3>
-          <p>Custom content designed specifically for AI citation, delivered as markdown for your CMS, GitHub PR, or Notion pack.</p>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">📝</div>
+          <h3>Up to 4 Answer-Shaped Pages</h3>
+          <p>Custom content optimized specifically for AI citation. Delivered as markdown for your CMS, GitHub PR, or Notion pack — ready to publish.</p>
         </div>
-        <div class="deliverable">
-          <h3><span class="deliverable-number">3</span>Entity & Citation Plan</h3>
-          <p>Strategic roadmap for building the signals that AI engines use to understand and cite your product.</p>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">🎯</div>
+          <h3>Entity & Citation Plan</h3>
+          <p>Strategic roadmap for building authority signals that AI engines recognize. Includes entity relationships and citation opportunities for your category.</p>
         </div>
-        <div class="deliverable">
-          <h3><span class="deliverable-number">4</span>Monthly Scoreboard</h3>
-          <p>Query × engine matrix showing where you're getting cited and tracking month-over-month improvements.</p>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">📈</div>
+          <h3>Monthly Scoreboard</h3>
+          <p>Query × engine matrix showing exactly where you're getting cited. Track month-over-month improvements and identify new opportunities.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Proof Section -->
-    <section class="section content-section center">
-      <h2>Process Proof</h2>
-      <div class="proof-box">
-        <p>Our Harbor Ops demo pack shipped with zero human edits — process proof that our AI optimization methodology works at scale.</p>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="section content-section center" id="pricing">
+  <!-- Pricing -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
       <h2>Pricing</h2>
-      <div class="pricing">
-        <div class="pricing-tier">
-          <h3>Pilot</h3>
-          <div class="price">$499 <span class="price-period">one-time</span></div>
-          <p>Test the process with 100% credit toward month 1 of any ongoing retainer.</p>
-          <a href="https://buy.stripe.com/7sY00k4jw1Qxgs51qo0Ba00" class="btn btn-secondary" target="_blank">Start Pilot — $499</a>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="pricing-name">Pilot</h3>
+          <div class="pricing-price">$499</div>
+          <div class="pricing-period">one-time</div>
+          <p class="pricing-description">Test the process with 100% credit toward month 1 of any ongoing retainer.</p>
+          <a href="https://buy.stripe.com/7sY00k4jw1Qxgs51qo0Ba00" class="btn btn-secondary pricing-cta" target="_blank">Start Pilot — $499</a>
         </div>
         
-        <div class="pricing-tier">
-          <h3>Pilot Plus</h3>
-          <div class="price">$750 <span class="price-period">one-time</span></div>
-          <p>Extended pilot for US-funded SaaS with 100% credit toward ongoing retainer.</p>
-          <a href="https://buy.stripe.com/dRm9AU03geDja3Hb0Y0Ba01" class="btn btn-secondary" target="_blank">Start Pilot — $750</a>
+        <div class="pricing-card">
+          <h3 class="pricing-name">Pilot Plus</h3>
+          <div class="pricing-price">$750</div>
+          <div class="pricing-period">one-time</div>
+          <p class="pricing-description">Extended pilot for US-funded SaaS with 100% credit toward ongoing retainer.</p>
+          <a href="https://buy.stripe.com/dRm9AU03geDja3Hb0Y0Ba01" class="btn btn-secondary pricing-cta" target="_blank">Start Pilot Plus — $750</a>
         </div>
         
-        <div class="pricing-tier featured">
-          <h3>Focus</h3>
-          <div class="price">$1,500 <span class="price-period">/month</span></div>
-          <p>Full Bot AEO Monthly service for one product line. Most popular starting point.</p>
-          <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary" target="_blank">Start Focus — $1,500/mo</a>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3 class="pricing-name">Focus</h3>
+          <div class="pricing-price">$1,500</div>
+          <div class="pricing-period">/month</div>
+          <p class="pricing-description">Full Bot AEO Monthly service for one product line. Perfect starting point for most B2B SaaS companies.</p>
+          <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary pricing-cta" target="_blank">Start Focus — $1,500/mo</a>
         </div>
         
-        <div class="pricing-tier">
-          <h3>Standard</h3>
-          <div class="price">$2,500 <span class="price-period">/month</span></div>
-          <p>Enhanced service with additional coverage and faster iteration cycles.</p>
-          <a href="https://buy.stripe.com/dRm6oI6rEcvbb7L5GE0Ba03" class="btn btn-secondary" target="_blank">Start Standard — $2,500/mo</a>
+        <div class="pricing-card">
+          <h3 class="pricing-name">Standard</h3>
+          <div class="pricing-price">$2,500</div>
+          <div class="pricing-period">/month</div>
+          <p class="pricing-description">Enhanced service with additional coverage and faster iteration cycles for established products.</p>
+          <a href="https://buy.stripe.com/dRm6oI6rEcvbb7L5GE0Ba03" class="btn btn-secondary pricing-cta" target="_blank">Start Standard — $2,500/mo</a>
         </div>
       </div>
-      <p style="margin-top: 2rem; color: #71717a; font-size: 0.875rem;">All pricing is per product line/domain. Pilots include 100% credit toward ongoing monthly retainer.</p>
-    </section>
+      <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.875rem;">
+        All pricing is per product line/domain. Pilots include 100% credit toward ongoing monthly retainer.
+      </p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>Cited provides AI citation optimization services. We do not guarantee specific rankings or citation placements in AI systems. Results vary by industry, competition, and content quality. Bot AEO Monthly is a service of Cited, independent of SparxIT.</p>
-      <p style="margin-top: 1rem; color: #52525b;">&copy; 2026 Cited. All rights reserved.</p>
-    </footer>
-  </div>
+  <!-- FAQ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Who is Bot AEO Monthly for?</h3>
+          <p class="faq-answer">Bot AEO Monthly works best for B2B SaaS founders, Heads of Growth at ATS/HR-tech companies, and B2B commerce leaders who need to be found when prospects research solutions. You should have a live product, paying customers, and want to capture demand when people ask AI assistants for recommendations.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">How is this different from traditional SEO?</h3>
+          <p class="faq-answer">Traditional SEO optimizes for Google search rankings. Bot AEO optimizes for AI citation in conversational interfaces like Claude, Gemini, and AI Overviews. We create content specifically shaped for how AI engines understand and reference solutions, not just keyword rankings.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Do you guarantee citations or rankings?</h3>
+          <p class="faq-answer">No, we do not guarantee specific citations or rankings in AI systems. Results vary by industry, competition, and content quality. We provide process optimization and track improvements, but AI engine behavior is ultimately controlled by the platforms themselves.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">What's included in the Pilot?</h3>
+          <p class="faq-answer">The Pilot includes a limited version of our full audit and one answer-shaped page. It's designed to test our process risk-free with 100% credit toward month 1 of any ongoing retainer. Pilot Plus offers extended coverage for US-funded SaaS companies.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">How do you measure success?</h3>
+          <p class="faq-answer">We track citation frequency across AI engines using our monthly scoreboard — a query × engine matrix showing where you're getting mentioned. We measure month-over-month improvements and identify new opportunities as AI engines evolve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>Cited provides AI citation optimization services. We do not guarantee specific rankings or citation placements in AI systems. Results vary by industry, competition, and content quality. Bot AEO Monthly is a service of Cited, independent of SparxIT.</p>
+        <div class="footer-copyright">
+          &copy; 2026 Cited. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
