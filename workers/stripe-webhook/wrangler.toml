@@ -1,0 +1,23 @@
+name = "cited-stripe-webhook"
+main = "index.ts"
+compatibility_date = "2023-12-01"
+
+# Custom domain configuration for hooks.citedhq.ai
+# After deployment, add custom domain in Cloudflare Dashboard:
+# Workers & Pages -> cited-stripe-webhook -> Settings -> Triggers -> Custom Domains -> Add Custom Domain
+# Domain: hooks.citedhq.ai
+# Then add DNS CNAME record: hooks CNAME <worker-subdomain>.workers.dev
+
+# Uncomment and configure routes after custom domain is set up:
+# routes = [
+#   { pattern = "hooks.citedhq.ai/*", custom_domain = true }
+# ]
+
+# Environment variables (set these via wrangler secret put or Cloudflare Dashboard)
+# STRIPE_WEBHOOK_SECRET = "whsec_..." (from Stripe Dashboard webhook endpoint)
+
+[env.production]
+name = "cited-stripe-webhook"
+
+[env.staging]  
+name = "cited-stripe-webhook-staging"

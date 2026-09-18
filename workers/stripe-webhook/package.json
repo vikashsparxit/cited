@@ -1,0 +1,18 @@
+{
+  "name": "cited-stripe-webhook",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for Stripe webhooks at hooks.citedhq.ai",
+  "main": "index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "deploy:staging": "wrangler deploy --env staging",
+    "tail": "wrangler tail"
+  },
+  "keywords": ["stripe", "webhook", "cloudflare", "worker"],
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
+  }
+}
