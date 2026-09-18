@@ -310,7 +310,12 @@ export async function onRequestPost(context: {
   }
 }
 
-// Handle other HTTP methods
-export async function onRequest(): Promise<Response> {
-  return new Response('Method not allowed', { status: 405 });
+// Handle GET requests (proves Function routing is working)
+export async function onRequestGet(): Promise<Response> {
+  return new Response('Method not allowed', { 
+    status: 405,
+    headers: {
+      'Allow': 'POST'
+    }
+  });
 }
