@@ -1,0 +1,17 @@
+{
+  "event_id": "evt_1UGb4LIIPbN1sDgZlqiET60W",
+  "event_type": "checkout.session.completed",
+  "timestamp": "2026-09-18T08:23:42.000Z",
+  "status": "paid",
+  "customer_email": "founder@example-saas.com",
+  "amount": 150000,
+  "currency": "usd",
+  "payment_metadata": {
+    "sku": "FOCUS",
+    "tier": "FOCUS",
+    "company": "Cited",
+    "product_id": "prod_VH9MGzpZxPHuxw",
+    "price_id": "price_1UGb48IIPbN1sDgZai2qjLBW",
+    "payment_link": "https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02"
+  }
+}
