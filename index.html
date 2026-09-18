@@ -6,29 +6,51 @@
   <title>Cited — Bot AEO Monthly | AI Citation Optimization Retainer</title>
   <meta name="description" content="Bot AEO Monthly — AI citation & answer-engine optimization retainer for B2B SaaS. Get found in Claude, Gemini, Grok & Google AI Overviews." />
   <meta name="robots" content="index,follow" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23181818'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='%23f8fafc'%3EC%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3EC%3C/text%3E%3C/svg%3E" />
   
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      color-scheme: dark;
-      --bg-primary: #0f0f0f;
-      --bg-secondary: #181818;
-      --bg-tertiary: #212121;
-      --bg-card: #1a1a1a;
-      --border-primary: #2a2a2a;
-      --border-secondary: #383838;
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --accent-primary: #6366f1;
-      --accent-secondary: #8b5cf6;
-      --accent-success: #10b981;
-      --accent-warning: #f59e0b;
+      /* Light Color System */
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f4f4f5;
+      --gray-200: #e4e4e7;
+      --gray-300: #d4d4d8;
+      --gray-400: #a1a1aa;
+      --gray-500: #71717a;
+      --gray-600: #52525b;
+      --gray-700: #3f3f46;
+      --gray-800: #27272a;
+      --gray-900: #18181b;
+      
+      /* Brand Colors */
+      --blue-500: #3b82f6;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      
+      --green-500: #10b981;
+      --green-600: #059669;
+      
+      --purple-500: #8b5cf6;
+      --purple-600: #7c3aed;
+      
+      --orange-500: #f97316;
+      --orange-600: #ea580c;
+      
+      /* Semantic Colors */
+      --bg-primary: var(--white);
+      --bg-secondary: var(--gray-50);
+      --bg-accent: var(--blue-500);
+      --text-primary: var(--gray-900);
+      --text-secondary: var(--gray-600);
+      --text-muted: var(--gray-500);
+      --border: var(--gray-200);
+      --border-strong: var(--gray-300);
     }
 
     * {
@@ -37,23 +59,37 @@
       padding: 0;
     }
 
-    html, body {
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
       font-weight: 400;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-      font-weight: 800;
+    /* Editorial Typography */
+    h1, h2, h3 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-weight: 600;
       line-height: 1.2;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
     }
 
     /* Navigation */
@@ -63,13 +99,13 @@
       left: 0;
       right: 0;
       z-index: 50;
-      background: rgba(15, 15, 15, 0.8);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-primary);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-container {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
       display: flex;
@@ -81,24 +117,25 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
+      gap: 0.75rem;
+      font-weight: 800;
       font-size: 1.125rem;
       color: var(--text-primary);
       text-decoration: none;
+      font-family: 'Inter', sans-serif;
     }
 
     .nav-logo-icon {
       width: 2rem;
       height: 2rem;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-primary);
+      background: var(--gray-900);
+      color: white;
       border-radius: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-primary);
       font-weight: 700;
+      font-size: 0.875rem;
     }
 
     .nav-links {
@@ -121,9 +158,9 @@
     }
 
     .nav-cta {
-      padding: 0.5rem 1rem;
-      background: var(--accent-primary);
+      background: var(--bg-accent);
       color: white;
+      padding: 0.5rem 1rem;
       border-radius: 0.375rem;
       text-decoration: none;
       font-weight: 600;
@@ -132,12 +169,12 @@
     }
 
     .nav-cta:hover {
-      background: #5048e5;
+      background: var(--blue-600);
     }
 
     /* Layout */
     .container {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
@@ -146,136 +183,543 @@
       padding: 5rem 0;
     }
 
-    .section-sm {
-      padding: 3rem 0;
+    .section-lg {
+      padding: 6rem 0;
     }
 
     /* Hero Section */
     .hero {
+      background: var(--bg-primary);
       padding: 8rem 0 6rem;
       margin-top: 4rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-content h1 {
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .hero-content {
+      max-width: 600px;
     }
 
-    .hero-tagline {
-      font-size: 1.25rem;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
       color: var(--text-secondary);
       margin-bottom: 2rem;
-      font-weight: 500;
     }
 
-    .hero-description {
-      font-size: 1.1rem;
-      color: var(--text-muted);
+    .hero-badge::before {
+      content: "🎯";
+      font-size: 1rem;
+    }
+
+    .hero-title {
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
       margin-bottom: 2.5rem;
-      line-height: 1.7;
+      line-height: 1.6;
+      font-weight: 400;
     }
 
     .hero-ctas {
       display: flex;
       gap: 1rem;
-      flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
 
-    /* AI Mock UI */
-    .ai-mock {
-      background: var(--bg-card);
-      border: 1px solid var(--border-primary);
+    /* AI Product Mock */
+    .ai-workspace {
+      background: var(--white);
+      border: 1px solid var(--border-strong);
       border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      position: relative;
     }
 
-    .ai-mock-header {
+    .ai-workspace::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-500), var(--purple-500), var(--green-500));
+    }
+
+    .ai-header {
+      background: var(--bg-secondary);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border-primary);
+      gap: 1rem;
     }
 
-    .ai-mock-avatar {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    .ai-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: linear-gradient(135deg, var(--blue-500), var(--purple-500));
+      border-radius: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .ai-info h4 {
+      font-family: 'Inter', sans-serif;
       font-size: 0.875rem;
-    }
-
-    .ai-mock-info {
-      flex: 1;
-    }
-
-    .ai-mock-name {
       font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.125rem;
+    }
+
+    .ai-info p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .ai-content {
+      padding: 1.5rem;
+    }
+
+    .ai-query {
+      background: var(--gray-100);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--blue-500);
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      font-style: italic;
+    }
+
+    .ai-response {
+      line-height: 1.7;
       color: var(--text-primary);
       font-size: 0.875rem;
     }
 
-    .ai-mock-status {
-      color: var(--text-muted);
-      font-size: 0.75rem;
-    }
-
-    .ai-mock-query {
-      background: var(--bg-secondary);
-      padding: 1rem;
-      border-radius: 0.75rem;
+    .ai-response p {
       margin-bottom: 1rem;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      border-left: 3px solid var(--accent-primary);
     }
 
-    .ai-mock-response {
-      line-height: 1.6;
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-    }
-
-    .ai-mock-citation {
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border-secondary);
+    .citation-highlight {
+      background: #fef3c7;
+      padding: 1rem;
+      border: 1px solid #f59e0b;
       border-radius: 0.5rem;
-      padding: 0.75rem;
       margin: 1rem 0;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
     .citation-icon {
-      width: 1rem;
-      height: 1rem;
-      color: var(--accent-success);
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--green-500);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      flex-shrink: 0;
     }
 
     .citation-text {
-      color: var(--text-primary);
-      font-weight: 500;
+      font-weight: 600;
+      color: #92400e;
       font-size: 0.8rem;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      background: var(--bg-secondary);
+      padding: 2rem 0;
+    }
+
+    .trust-content {
+      text-align: center;
+    }
+
+    .trust-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .trust-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+    }
+
+    /* Problem Section */
+    .problem {
+      background: var(--white);
+      position: relative;
+    }
+
+    .problem::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--orange-500);
+    }
+
+    .problem-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .problem h2 {
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+    }
+
+    .problem-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      position: relative;
+    }
+
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3rem;
+      height: 3px;
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    .stat-card:nth-child(1)::before { background: var(--blue-500); }
+    .stat-card:nth-child(2)::before { background: var(--green-500); }
+    .stat-card:nth-child(3)::before { background: var(--purple-500); }
+
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    .how-it-works::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--blue-500);
+    }
+
+    .how-it-works h2 {
+      text-align: center;
+      margin-bottom: 4rem;
+      color: var(--text-primary);
+    }
+
+    .steps-grid {
+      display: grid;
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .step-number {
+      width: 4rem;
+      height: 4rem;
+      background: var(--bg-accent);
+      color: white;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .step:nth-child(1) .step-number { background: var(--blue-500); }
+    .step:nth-child(2) .step-number { background: var(--green-500); }
+    .step:nth-child(3) .step-number { background: var(--purple-500); }
+    .step:nth-child(4) .step-number { background: var(--orange-500); }
+
+    .step-content h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .step-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Deliverables */
+    .deliverables {
+      background: var(--white);
+      position: relative;
+    }
+
+    .deliverables::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--green-500);
+    }
+
+    .deliverables h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--text-primary);
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .deliverable {
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .deliverable:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      border-color: var(--border-strong);
+    }
+
+    .deliverable-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .deliverable:nth-child(1) .deliverable-icon { background: var(--blue-500); }
+    .deliverable:nth-child(2) .deliverable-icon { background: var(--green-500); }
+    .deliverable:nth-child(3) .deliverable-icon { background: var(--purple-500); }
+    .deliverable:nth-child(4) .deliverable-icon { background: var(--orange-500); }
+
+    .deliverable h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .deliverable p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.925rem;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: var(--bg-secondary);
+      position: relative;
+    }
+
+    .pricing::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--purple-500);
+    }
+
+    .pricing h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .pricing-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--bg-accent);
+      transform: scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+    }
+
+    .pricing-card:hover:not(.featured) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .pricing-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .pricing-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-period {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-description {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.6;
     }
 
     /* Buttons */
@@ -286,6 +730,7 @@
       padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
       text-decoration: none;
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
       font-size: 0.875rem;
       transition: all 0.2s ease;
@@ -295,356 +740,86 @@
     }
 
     .btn-primary {
-      background: var(--accent-primary);
+      background: var(--bg-accent);
       color: white;
     }
 
     .btn-primary:hover {
-      background: #5048e5;
+      background: var(--blue-600);
       transform: translateY(-1px);
     }
 
     .btn-secondary {
-      background: var(--bg-secondary);
+      background: var(--white);
       color: var(--text-primary);
-      border: 1px solid var(--border-secondary);
+      border: 2px solid var(--border-strong);
     }
 
     .btn-secondary:hover {
-      background: var(--bg-tertiary);
-      border-color: var(--border-primary);
+      border-color: var(--text-secondary);
+      transform: translateY(-1px);
     }
 
-    /* Trust Strip */
-    .trust-strip {
-      padding: 2rem 0;
-      border-top: 1px solid var(--border-primary);
-      border-bottom: 1px solid var(--border-primary);
-    }
-
-    .trust-content {
-      text-align: center;
-    }
-
-    .trust-label {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-badge {
-      background: var(--bg-secondary);
-      padding: 0.5rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      border: 1px solid var(--border-primary);
-    }
-
-    /* Problem Section */
-    .problem {
-      background: var(--bg-secondary);
-    }
-
-    .problem-content {
-      max-width: 48rem;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .problem h2 {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: 1.5rem;
-    }
-
-    .problem-description {
-      font-size: 1.125rem;
-      color: var(--text-secondary);
-      margin-bottom: 3rem;
-      line-height: 1.7;
-    }
-
-    .problem-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .problem-stat {
-      text-align: center;
-      padding: 2rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-primary);
-      border-radius: 0.75rem;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--accent-primary);
-      margin-bottom: 0.5rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .stat-label {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    /* How It Works */
-    .how-it-works h2 {
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: 3rem;
-    }
-
-    .steps {
-      display: grid;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .step:nth-child(even) {
-      grid-template-columns: 1fr auto;
-      direction: rtl;
-    }
-
-    .step:nth-child(even) .step-content {
-      direction: ltr;
-      text-align: right;
-    }
-
-    .step-number {
-      width: 4rem;
-      height: 4rem;
-      background: var(--accent-primary);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.25rem;
-      font-family: 'Inter', sans-serif;
-      flex-shrink: 0;
-    }
-
-    .step-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .step-content p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Deliverables */
-    .deliverables {
-      background: var(--bg-secondary);
-    }
-
-    .deliverables h2 {
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: 3rem;
-    }
-
-    .deliverables-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .deliverable-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-primary);
-      border-radius: 1rem;
-      padding: 2rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .deliverable-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--border-secondary);
-    }
-
-    .deliverable-icon {
-      width: 3rem;
-      height: 3rem;
-      background: var(--accent-primary);
-      border-radius: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      color: white;
-      font-size: 1.25rem;
-    }
-
-    .deliverable-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .deliverable-card p {
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Pricing */
-    .pricing h2 {
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: 3rem;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .pricing-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-primary);
-      border-radius: 1rem;
-      padding: 2rem;
-      position: relative;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .pricing-card.featured {
-      border-color: var(--accent-primary);
-      transform: scale(1.05);
-    }
-
-    .pricing-card:hover:not(.featured) {
-      transform: translateY(-2px);
-      border-color: var(--border-secondary);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -0.75rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent-primary);
-      color: white;
-      padding: 0.25rem 1rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-    .pricing-name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .pricing-price {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .pricing-period {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-bottom: 2rem;
-    }
-
-    .pricing-description {
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .pricing-cta {
+    .btn-full {
       width: 100%;
     }
 
     /* FAQ */
     .faq {
-      background: var(--bg-secondary);
+      background: var(--white);
     }
 
     .faq h2 {
       text-align: center;
-      font-size: clamp(2rem, 4vw, 2.5rem);
       margin-bottom: 3rem;
+      color: var(--text-primary);
     }
 
-    .faq-list {
-      max-width: 48rem;
+    .faq-container {
+      max-width: 800px;
       margin: 0 auto;
     }
 
     .faq-item {
-      border-bottom: 1px solid var(--border-primary);
-      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
     }
 
     .faq-question {
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
       font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
     }
 
     .faq-answer {
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* Footer */
     .footer {
-      border-top: 1px solid var(--border-primary);
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
       padding: 3rem 0 2rem;
-      text-align: center;
     }
 
     .footer-content {
-      max-width: 48rem;
+      max-width: 800px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .footer p {
-      color: var(--text-muted);
-      font-size: 0.875rem;
+      color: var(--text-secondary);
       line-height: 1.6;
       margin-bottom: 1rem;
     }
 
     .footer-copyright {
       color: var(--text-muted);
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       margin-top: 2rem;
     }
 
@@ -653,7 +828,7 @@
       .nav-links {
         display: none;
       }
-      
+
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -661,30 +836,39 @@
 
       .hero-content {
         text-align: center;
+        max-width: none;
       }
-      
-      .container {
-        padding: 0 1.5rem;
+
+      .deliverables-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
 
     @media (max-width: 768px) {
-      .hero {
-        padding: 6rem 0 4rem;
+      .container {
+        padding: 0 1.5rem;
       }
 
       .section {
         padding: 3rem 0;
       }
 
+      .hero {
+        padding: 6rem 0 4rem;
+      }
+
       .hero-ctas {
         flex-direction: column;
-        align-items: center;
+        gap: 0.75rem;
       }
 
       .btn {
         width: 100%;
-        max-width: 300px;
       }
 
       .step {
@@ -693,28 +877,41 @@
         gap: 1rem;
       }
 
-      .step:nth-child(even) {
+      .pricing-grid {
         grid-template-columns: 1fr;
-        direction: ltr;
-      }
-
-      .step:nth-child(even) .step-content {
-        direction: ltr;
-        text-align: center;
       }
 
       .pricing-card.featured {
         transform: none;
       }
 
-      .trust-badges {
-        gap: 1rem;
+      h1 {
+        font-size: 2.5rem;
       }
 
-      .problem-stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+      h2 {
+        font-size: 2rem;
       }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content,
+    .ai-workspace,
+    .step,
+    .deliverable,
+    .pricing-card {
+      animation: fadeInUp 0.6s ease-out;
     }
   </style>
 </head>
@@ -731,7 +928,7 @@
         <li><a href="#deliverables">What you get</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#" class="nav-cta">Start Focus — $1,500/mo</a></li>
+        <li><a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="nav-cta" target="_blank">Start Focus — $1,500/mo</a></li>
       </ul>
     </div>
   </nav>
@@ -741,9 +938,9 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>Get Found When AI Recommends Your Category</h1>
-          <p class="hero-tagline">Bot AEO Monthly — AI Citation Optimization Retainer</p>
-          <p class="hero-description">
+          <div class="hero-badge">AI Citation Optimization</div>
+          <h1 class="hero-title">Get Found When AI Recommends Your Category</h1>
+          <p class="hero-subtitle">
             Stop losing prospects to AI recommendations. Bot AEO Monthly gets 
             your B2B SaaS mentioned when Claude, Gemini, and Google AI answer 
             questions about your industry.
@@ -755,27 +952,31 @@
             <a href="#pricing" class="btn btn-secondary">View All Plans</a>
           </div>
         </div>
-        <div class="ai-mock">
-          <div class="ai-mock-header">
-            <div class="ai-mock-avatar">C</div>
-            <div class="ai-mock-info">
-              <div class="ai-mock-name">Claude</div>
-              <div class="ai-mock-status">AI Assistant</div>
+        
+        <div class="ai-workspace">
+          <div class="ai-header">
+            <div class="ai-avatar">C</div>
+            <div class="ai-info">
+              <h4>Claude</h4>
+              <p>AI Assistant • Anthropic</p>
             </div>
           </div>
-          <div class="ai-mock-query">
-            "What's the best project management software for remote teams?"
-          </div>
-          <div class="ai-mock-response">
-            <p>For remote teams, I'd recommend looking at several strong options:</p>
-            <div class="ai-mock-citation">
-              <svg class="citation-icon" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="citation-text">Your SaaS Company — Comprehensive team collaboration platform</span>
+          <div class="ai-content">
+            <div class="ai-query">
+              "What's the best project management software for remote teams?"
             </div>
-            <p><strong>Your SaaS Company</strong> offers excellent remote team features with integrated video calls, async communication tools, and robust project tracking. Their approach to distributed team coordination has earned recognition from leading remote-first organizations.</p>
-            <p>Other solid options include Asana for task management and Notion for documentation-heavy workflows...</p>
+            <div class="ai-response">
+              <p>For remote teams, I'd recommend looking at several strong options based on your specific needs:</p>
+              
+              <div class="citation-highlight">
+                <div class="citation-icon">✓</div>
+                <div class="citation-text">Your SaaS Company — Comprehensive team collaboration platform</div>
+              </div>
+              
+              <p><strong>Your SaaS Company</strong> offers excellent remote team features with integrated video calls, async communication tools, and robust project tracking. Their approach to distributed team coordination has earned recognition from leading remote-first organizations.</p>
+              
+              <p>Other solid options include Asana for task management, Notion for documentation-heavy workflows, and Linear for engineering teams...</p>
+            </div>
           </div>
         </div>
       </div>
@@ -787,18 +988,18 @@
     <div class="container">
       <div class="trust-content">
         <p class="trust-label">Monitoring AI engines actively</p>
-        <div class="trust-badges">
-          <div class="trust-badge">Claude 3.5 Sonnet</div>
-          <div class="trust-badge">Gemini Pro</div>
-          <div class="trust-badge">GPT-4 & Grok</div>
-          <div class="trust-badge">Google AI Overviews</div>
+        <div class="trust-logos">
+          <div class="trust-logo">Claude 3.5 Sonnet</div>
+          <div class="trust-logo">Gemini Pro</div>
+          <div class="trust-logo">GPT-4 & Grok</div>
+          <div class="trust-logo">Google AI Overviews</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Problem Section -->
-  <section class="problem section">
+  <section class="problem section-lg">
     <div class="container">
       <div class="problem-content">
         <h2>While competitors fight for traditional SEO rankings, smart companies are capturing demand where their prospects actually search</h2>
@@ -807,16 +1008,17 @@
           getting Gemini to compare solutions, and trusting AI assistants to guide their buying decisions. 
           If you're not optimized for AI citation, you're invisible where it matters most.
         </p>
-        <div class="problem-stats">
-          <div class="problem-stat">
+        
+        <div class="stats-grid">
+          <div class="stat-card">
             <div class="stat-number">4+</div>
             <div class="stat-label">AI engines actively monitored</div>
           </div>
-          <div class="problem-stat">
+          <div class="stat-card">
             <div class="stat-number">10+</div>
             <div class="stat-label">money queries audited monthly</div>
           </div>
-          <div class="problem-stat">
+          <div class="stat-card">
             <div class="stat-number">$1.5K</div>
             <div class="stat-label">starting monthly investment</div>
           </div>
@@ -826,10 +1028,10 @@
   </section>
 
   <!-- How It Works -->
-  <section class="how-it-works section" id="how-it-works">
+  <section class="how-it-works section-lg" id="how-it-works">
     <div class="container">
       <h2>How Bot AEO Monthly Works</h2>
-      <div class="steps">
+      <div class="steps-grid">
         <div class="step">
           <div class="step-number">1</div>
           <div class="step-content">
@@ -837,6 +1039,7 @@
             <p>We test how Claude, Gemini, Grok, and Google AI Overviews currently answer the exact questions your prospects ask when they're ready to buy. This reveals where you're missing and which competitors are getting cited.</p>
           </div>
         </div>
+        
         <div class="step">
           <div class="step-number">2</div>
           <div class="step-content">
@@ -844,18 +1047,20 @@
             <p>We create content specifically designed for AI citation — not traditional SEO. These pages are structured to match how AI engines understand and reference solutions in your category.</p>
           </div>
         </div>
+        
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-content">
             <h3>Entity & Citation Plan</h3>
-            <p>Strategic roadmap for building the signals that AI engines use to understand and cite your product. This includes entity relationships, authority markers, and citation patterns that increase your visibility.</p>
+            <p>Strategic roadmap for building the signals that AI engines use to understand and cite your product. This includes entity relationships, authority markers, and citation patterns.</p>
           </div>
         </div>
+        
         <div class="step">
           <div class="step-number">4</div>
           <div class="step-content">
             <h3>Track & Iterate</h3>
-            <p>Monthly scoreboard showing query × engine matrix where you're getting cited. We track improvements over time and adjust strategy based on how AI engines evolve their recommendation patterns.</p>
+            <p>Monthly scoreboard showing query × engine matrix where you're getting cited. We track improvements over time and adjust strategy based on AI engine evolution.</p>
           </div>
         </div>
       </div>
@@ -863,26 +1068,29 @@
   </section>
 
   <!-- Deliverables -->
-  <section class="deliverables section" id="deliverables">
+  <section class="deliverables section-lg" id="deliverables">
     <div class="container">
       <h2>What You Get Each Month</h2>
       <div class="deliverables-grid">
-        <div class="deliverable-card">
+        <div class="deliverable">
           <div class="deliverable-icon">📊</div>
           <h3>10 Money-Query AI Citation Audit</h3>
           <p>Comprehensive testing of how AI engines answer your prospects' buying questions. Delivered as detailed report with competitor analysis and opportunity gaps.</p>
         </div>
-        <div class="deliverable-card">
+        
+        <div class="deliverable">
           <div class="deliverable-icon">📝</div>
           <h3>Up to 4 Answer-Shaped Pages</h3>
           <p>Custom content optimized specifically for AI citation. Delivered as markdown for your CMS, GitHub PR, or Notion pack — ready to publish.</p>
         </div>
-        <div class="deliverable-card">
+        
+        <div class="deliverable">
           <div class="deliverable-icon">🎯</div>
           <h3>Entity & Citation Plan</h3>
           <p>Strategic roadmap for building authority signals that AI engines recognize. Includes entity relationships and citation opportunities for your category.</p>
         </div>
-        <div class="deliverable-card">
+        
+        <div class="deliverable">
           <div class="deliverable-icon">📈</div>
           <h3>Monthly Scoreboard</h3>
           <p>Query × engine matrix showing exactly where you're getting cited. Track month-over-month improvements and identify new opportunities.</p>
@@ -892,24 +1100,28 @@
   </section>
 
   <!-- Pricing -->
-  <section class="pricing section" id="pricing">
+  <section class="pricing section-lg" id="pricing">
     <div class="container">
       <h2>Pricing</h2>
+      <p class="pricing-subtitle">
+        Choose your engagement level. All plans include full service delivery and transparent reporting.
+      </p>
+      
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3 class="pricing-name">Pilot</h3>
           <div class="pricing-price">$499</div>
           <div class="pricing-period">one-time</div>
-          <p class="pricing-description">Test the process with 100% credit toward month 1 of any ongoing retainer.</p>
-          <a href="https://buy.stripe.com/7sY00k4jw1Qxgs51qo0Ba00" class="btn btn-secondary pricing-cta" target="_blank">Start Pilot — $499</a>
+          <p class="pricing-description">Test our process risk-free with 100% credit toward month 1 of any ongoing retainer.</p>
+          <a href="https://buy.stripe.com/7sY00k4jw1Qxgs51qo0Ba00" class="btn btn-secondary btn-full" target="_blank">Start Pilot — $499</a>
         </div>
         
         <div class="pricing-card">
           <h3 class="pricing-name">Pilot Plus</h3>
           <div class="pricing-price">$750</div>
           <div class="pricing-period">one-time</div>
-          <p class="pricing-description">Extended pilot for US-funded SaaS with 100% credit toward ongoing retainer.</p>
-          <a href="https://buy.stripe.com/dRm9AU03geDja3Hb0Y0Ba01" class="btn btn-secondary pricing-cta" target="_blank">Start Pilot Plus — $750</a>
+          <p class="pricing-description">Extended pilot for US-funded SaaS with 100% credit toward ongoing retainer included.</p>
+          <a href="https://buy.stripe.com/dRm9AU03geDja3Hb0Y0Ba01" class="btn btn-secondary btn-full" target="_blank">Start Pilot Plus — $750</a>
         </div>
         
         <div class="pricing-card featured">
@@ -918,7 +1130,7 @@
           <div class="pricing-price">$1,500</div>
           <div class="pricing-period">/month</div>
           <p class="pricing-description">Full Bot AEO Monthly service for one product line. Perfect starting point for most B2B SaaS companies.</p>
-          <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary pricing-cta" target="_blank">Start Focus — $1,500/mo</a>
+          <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary btn-full" target="_blank">Start Focus — $1,500/mo</a>
         </div>
         
         <div class="pricing-card">
@@ -926,9 +1138,10 @@
           <div class="pricing-price">$2,500</div>
           <div class="pricing-period">/month</div>
           <p class="pricing-description">Enhanced service with additional coverage and faster iteration cycles for established products.</p>
-          <a href="https://buy.stripe.com/dRm6oI6rEcvbb7L5GE0Ba03" class="btn btn-secondary pricing-cta" target="_blank">Start Standard — $2,500/mo</a>
+          <a href="https://buy.stripe.com/dRm6oI6rEcvbb7L5GE0Ba03" class="btn btn-secondary btn-full" target="_blank">Start Standard — $2,500/mo</a>
         </div>
       </div>
+      
       <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.875rem;">
         All pricing is per product line/domain. Pilots include 100% credit toward ongoing monthly retainer.
       </p>
@@ -939,7 +1152,7 @@
   <section class="faq section" id="faq">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
+      <div class="faq-container">
         <div class="faq-item">
           <h3 class="faq-question">Who is Bot AEO Monthly for?</h3>
           <p class="faq-answer">Bot AEO Monthly works best for B2B SaaS founders, Heads of Growth at ATS/HR-tech companies, and B2B commerce leaders who need to be found when prospects research solutions. You should have a live product, paying customers, and want to capture demand when people ask AI assistants for recommendations.</p>
