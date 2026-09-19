@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cited — Bot AEO Monthly Walkthrough | AI Citation Optimization Process</title>
+  <meta name="description" content="Learn how Bot AEO Monthly works: AI citation audits, answer-shaped content, and scoreboard tracking. Get cited when prospects ask AI for recommendations." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Bot AEO Monthly Walkthrough — How AI Citation Optimization Works" />
+  <meta property="og:description" content="Monthly cycle: audit AI citations, create answer-shaped content, track results. Transparent process for B2B SaaS citation optimization." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.citedhq.ai/assets/og-image.svg" />
+  <meta property="og:url" content="https://www.citedhq.ai/walkthrough.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.citedhq.ai/assets/og-image.svg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171612'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='19' font-style='italic' fill='%23FFE45C'%3EC%3C/text%3E%3C/svg%3E" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       DESIGN TOKENS — ink on paper, one signature highlight
+       ================================================================ */
+    :root {
+      --paper: #FBFAF6;
+      --paper-2: #F3F1E9;
+      --card: #FFFFFF;
+      --ink: #17160F;
+      --ink-soft: #47443B;
+      --ink-mute: #85806F;
+      --line: #E6E3D7;
+      --line-strong: #D3CFBE;
+
+      --hl: #FFE45C;          /* highlighter yellow — the brand accent */
+      --hl-soft: #FFF4BC;
+      --hl-ink: #6B5900;
+
+      --ok: #2F7D4F;
+
+      --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+      --container: 1160px;
+      --radius: 14px;
+      --radius-sm: 9px;
+
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow-card: 0 1px 2px rgba(23, 22, 15, 0.04), 0 8px 24px -12px rgba(23, 22, 15, 0.12);
+      --shadow-float: 0 2px 4px rgba(23, 22, 15, 0.05), 0 24px 48px -16px rgba(23, 22, 15, 0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    [hidden] { display: none !important; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: var(--hl); color: var(--ink); }
+
+    :focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ================================================================
+       TYPE SYSTEM
+       ================================================================ */
+    h1, h2, .display {
+      font-family: var(--font-display);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      font-optical-sizing: auto;
+    }
+
+    h1 { font-size: clamp(2.6rem, 4.6vw, 4rem); text-wrap: balance; }
+    h2 { font-size: clamp(2rem, 4vw, 3.1rem); }
+
+    .em {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* Highlighter sweep — the signature brand move */
+    .hl {
+      background-image: linear-gradient(var(--hl), var(--hl));
+      background-repeat: no-repeat;
+      background-size: 0% 42%;
+      background-position: 0 78%;
+      transition: background-size 0.9s var(--ease-out);
+      transition-delay: 0.35s;
+      padding: 0 0.08em;
+      margin: 0 -0.08em;
+      border-radius: 2px;
+    }
+    .in-view .hl, .hl.on { background-size: 100% 42%; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 1.6rem;
+      height: 2px;
+      background: var(--hl);
+      flex-shrink: 0;
+    }
+
+    .sub {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ================================================================
+       LAYOUT PRIMITIVES
+       ================================================================ */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    .section { padding: clamp(4.5rem, 9vw, 7.5rem) 0; }
+
+    .section-head {
+      max-width: 620px;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .section-head .eyebrow { margin-bottom: 1.1rem; }
+    .section-head h2 { margin-bottom: 1rem; }
+
+    .rule { border: none; border-top: 1px solid var(--line); }
+
+    /* ================================================================
+       SCROLL REVEAL
+       ================================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+      transition-delay: var(--d, 0s);
+    }
+    .in-view .reveal, .reveal.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ================================================================
+       NAVIGATION
+       ================================================================ */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 60;
+      background: rgba(251, 250, 246, 0.82);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, transform 0.4s var(--ease-out);
+    }
+    .nav.scrolled { border-bottom-color: var(--line); }
+
+    .nav-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+      height: 4.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.55rem;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo .tick {
+      color: transparent;
+      background: var(--hl);
+      width: 0.42em; height: 0.42em;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 0.14em;
+      transform: translateY(-0.05em);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.9rem;
+      list-style: none;
+    }
+    .nav-links a:not(.btn) {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+    .nav-links a:not(.btn)::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%; height: 2px;
+      background: var(--hl);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .nav-links a:not(.btn):hover { color: var(--ink); }
+    .nav-links a:not(.btn):hover::after { transform: scaleX(1); }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      width: 2.6rem; height: 2.6rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-btn span {
+      display: block;
+      width: 1.05rem; height: 2px;
+      background: var(--ink);
+      transition: transform 0.3s var(--ease-out), opacity 0.2s;
+    }
+    body.menu-open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.menu-open .menu-btn span:nth-child(2) { opacity: 0; }
+    body.menu-open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 4.25rem; left: 0; right: 0;
+      z-index: 55;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 1rem clamp(1.25rem, 4vw, 2.5rem) 1.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    body.menu-open .mobile-menu { display: flex; }
+    .mobile-menu a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .mobile-menu a:last-child { border-bottom: none; margin-top: 0.75rem; }
+
+    /* ================================================================
+       BUTTONS
+       ================================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.92rem;
+      line-height: 1;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background 0.2s, border-color 0.2s;
+    }
+    .btn .arr { transition: transform 0.25s var(--ease-out); }
+    .btn:hover .arr { transform: translateX(3px); }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -8px rgba(23, 22, 15, 0.45);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm { padding: 0.6rem 1.1rem; font-size: 0.84rem; }
+
+    /* ================================================================
+       WALKTHROUGH SPECIFIC STYLES
+       ================================================================ */
+    .walkthrough-hero {
+      padding: clamp(8rem, 15vh, 10.5rem) 0 clamp(3.5rem, 7vw, 6rem);
+      position: relative;
+      text-align: center;
+    }
+
+    .walkthrough-hero .eyebrow { justify-content: center; margin-bottom: 1.4rem; }
+    .walkthrough-hero .eyebrow::before { display: none; }
+    .walkthrough-hero h1 { margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .walkthrough-hero .sub { max-width: 600px; margin: 0 auto 2.4rem; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--hl-ink);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+
+    .step-card p {
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .honesty-card {
+      background: var(--paper-2);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: clamp(3rem, 6vw, 4.5rem) 0;
+      text-align: center;
+    }
+
+    .honesty-card .eyebrow {
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--ok);
+    }
+    .honesty-card .eyebrow::before {
+      background: var(--ok);
+    }
+
+    .honesty-card h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section {
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      padding: clamp(4.5rem, 9vw, 6rem) 0;
+    }
+
+    .cta-section h2 {
+      max-width: 600px;
+      margin: 0 auto 1.25rem;
+      color: var(--paper);
+    }
+
+    .cta-section .hl {
+      background-image: linear-gradient(var(--hl), var(--hl));
+      color: var(--ink);
+      background-size: 0% 92%;
+      background-position: 0 55%;
+      padding: 0 0.12em;
+      margin: 0 -0.04em;
+    }
+    .cta-section .in-view .hl { background-size: 100% 92%; }
+
+    .cta-section .sub {
+      color: rgba(251, 250, 246, 0.65);
+      max-width: 480px;
+      margin: 0 auto 2.4rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .cta-section .btn-primary {
+      background: var(--hl);
+      color: var(--ink);
+    }
+    .cta-section .btn-primary:hover {
+      box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta-section .btn-ghost {
+      color: var(--paper);
+      border-color: rgba(251, 250, 246, 0.3);
+    }
+    .cta-section .btn-ghost:hover {
+      border-color: var(--paper);
+    }
+
+    .cta-footnote {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: rgba(251, 250, 246, 0.45);
+      letter-spacing: 0.03em;
+    }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    .footer {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      padding: 3.5rem 0 2.5rem;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .footer .logo { font-size: 1.8rem; }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-legal {
+      border-top: 1px solid var(--line);
+      padding-top: 2rem;
+      color: var(--ink-mute);
+      font-size: 0.8rem;
+      line-height: 1.7;
+      max-width: 720px;
+    }
+    .footer-copy {
+      margin-top: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-mute);
+    }
+
+    /* ================================================================
+       RESPONSIVE
+       ================================================================ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-btn { display: flex; }
+      .process-steps { grid-template-columns: 1fr; }
+      .cta-buttons .btn { flex: 1 1 100%; }
+    }
+
+    /* ================================================================
+       REDUCED MOTION
+       ================================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .hl { background-size: 100% 42%; }
+      .cta-section .hl { background-size: 100% 92%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="Cited home">Cited<span class="tick" aria-hidden="true"></span></a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#deliverables">What you get</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Start Focus — $1,500/mo</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#how-it-works">How it works</a>
+    <a href="/#deliverables">What you get</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary" target="_blank" rel="noopener">Start Focus — $1,500/mo</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="walkthrough-hero">
+    <div class="container">
+      <div class="in-view">
+        <p class="eyebrow reveal" style="--d:0s">Bot AEO Monthly walkthrough</p>
+        <h1 class="reveal" style="--d:0.08s">How we get you <span class="hl em">cited</span> when AI recommends your category</h1>
+        <p class="sub reveal" style="--d:0.16s">
+          A transparent monthly process: audit AI citations, create answer-shaped content, track results. No vague optimization — just concrete work toward getting mentioned when prospects ask Claude, Gemini, and Google AI for software recommendations.
+        </p>
+
+        <div class="process-steps">
+          <div class="step-card reveal" style="--d:0.24s">
+            <div class="step-num">01</div>
+            <h3>Monthly AI Citation Audit</h3>
+            <p>We test exactly how Claude, Gemini, Grok, and Google AI Overviews answer your prospects' buying questions. You see which competitors get cited and where you're missing.</p>
+          </div>
+
+          <div class="step-card reveal" style="--d:0.32s">
+            <div class="step-num">02</div>
+            <h3>Answer-Shaped Content</h3>
+            <p>We create pages designed specifically for AI citation — content structured to match how AI engines understand and reference solutions in your category.</p>
+          </div>
+
+          <div class="step-card reveal" style="--d:0.4s">
+            <div class="step-num">03</div>
+            <h3>Scoreboard Tracking</h3>
+            <p>A monthly query × engine matrix shows exactly where you're getting cited. Track improvements over time and spot new opportunities as AI engines evolve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HONESTY SECTION ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="honesty-card watch">
+        <p class="eyebrow reveal">Honest approach</p>
+        <h2 class="reveal" style="--d:0.08s">We don't guarantee <span class="em">#1</span> citations</h2>
+        <p class="sub reveal" style="--d:0.16s">
+          AI engine behavior is controlled by the platforms themselves. We provide process optimization, create citation-friendly content, and track improvements — but results vary by industry, competition, and content quality. What we do guarantee: transparent monthly reporting and concrete deliverables you can measure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU GET ============ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head watch" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <p class="eyebrow reveal" style="justify-content: center;">Monthly deliverables</p>
+        <h2 class="reveal" style="--d:0.08s">Concrete work, <span class="em">not</span> vague optimization</h2>
+        <p class="sub reveal" style="--d:0.16s">Each month you receive specific artifacts: audit reports, content pages, strategic plans, and scoreboard updates.</p>
+      </div>
+
+      <div class="process-steps watch">
+        <div class="step-card reveal" style="--d:0s">
+          <h3>10 Money-Query Audit</h3>
+          <p>Comprehensive testing of how AI engines answer your prospects' buying questions — delivered as a detailed report with competitor analysis and opportunity gaps.</p>
+        </div>
+
+        <div class="step-card reveal" style="--d:0.08s">
+          <h3>Up to 4 Answer-Shaped Pages</h3>
+          <p>Custom content optimized for AI citation. Delivered as markdown for your CMS, a GitHub PR, or Notion pack — ready to publish.</p>
+        </div>
+
+        <div class="step-card reveal" style="--d:0.16s">
+          <h3>Entity & Citation Plan</h3>
+          <p>Strategic roadmap for building authority signals AI engines recognize — entity relationships and citation opportunities for your category.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container watch">
+      <h2 class="reveal">Start with a risk-free <span class="hl em">pilot</span></h2>
+      <p class="sub reveal" style="--d:0.1s">Test our process with a $499 pilot — fully credited toward your first month if you continue. See exactly how we work before committing to ongoing monthly service.</p>
+      <div class="cta-buttons reveal" style="--d:0.2s">
+        <a href="https://buy.stripe.com/7sY4gA9DQcvb8ZDeda0Ba02" class="btn btn-primary" target="_blank" rel="noopener">Start Focus — $1,500/mo <span class="arr">→</span></a>
+        <a href="https://buy.stripe.com/7sY00k4jw1Qxgs51qo0Ba00" class="btn btn-ghost" target="_blank" rel="noopener">Start Pilot — $499</a>
+      </div>
+      <p class="cta-footnote reveal" style="--d:0.3s">No guaranteed citations — transparent process with measurable deliverables. Operated by Webby Central LLC.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <a href="/" class="logo" aria-label="Cited home">Cited<span class="tick" aria-hidden="true"></span></a>
+        <ul class="footer-links">
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/#deliverables">What you get</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/walkthrough.html">Walkthrough</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p>Cited provides AI citation optimization services. We do not guarantee specific rankings or citation placements in AI systems. Results vary by industry, competition, and content quality. Bot AEO Monthly is a service of Cited, operated by Webby Central LLC.</p>
+        <p class="footer-copy">&copy; 2026 Cited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---------- Scroll reveal ---------- */
+      var watchEls = document.querySelectorAll('.watch');
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+        watchEls.forEach(function (el) { io.observe(el); });
+      } else {
+        watchEls.forEach(function (el) { el.classList.add('in-view'); });
+      }
+
+      /* ---------- Nav behavior ---------- */
+      var nav = document.getElementById('nav');
+      var lastY = 0;
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY;
+        nav.classList.toggle('scrolled', y > 12);
+        lastY = y;
+      }, { passive: true });
+
+      /* ---------- Mobile menu ---------- */
+      var menuBtn = document.getElementById('menuBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', function () {
+        var open = document.body.classList.toggle('menu-open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+      mobileMenu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          document.body.classList.remove('menu-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
